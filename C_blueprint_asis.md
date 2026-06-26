@@ -1,8 +1,4 @@
-"# Service Blueprint AS-IS"
-
-
-
-\# Service Blueprint: Emissão de Passaporte — Polícia Federal (As-Is)
+markdown# Service Blueprint: Emissão de Passaporte — Polícia Federal (AS-IS)
 
 
 
@@ -32,33 +28,25 @@
 
 
 
-1\. \*\*Preenchimento do formulário eletrônico\*\* — O cidadão acessa o site da PF, insere dados pessoais, informações de filiação e endereço, e declara o motivo da viagem.  
+1\. \*\*Preenchimento do formulário eletrônico\*\* — O cidadão acessa o site da PF, insere dados pessoais, informações de filiação e endereço, e declara o motivo da viagem.
 
 &#x20;  \*F4:\* erros de digitação, inconsistência entre o nome social e o registro civil, ou dados desatualizados na Receita Federal podem bloquear o prosseguimento.
 
-
-
-2\. \*\*Geração e pagamento da GRU\*\* — O sistema emite a guia com valor vigente; o cidadão paga em banco, casa lotérica, internet banking ou via Pix.  
+2\. \*\*Geração e pagamento da GRU\*\* — O sistema emite a guia com valor vigente; o cidadão paga em banco, casa lotérica, internet banking ou via Pix.
 
 &#x20;  \*G2:\* atraso na conciliação bancária pode impedir o agendamento mesmo após o pagamento confirmado.
 
-
-
-3\. \*\*Agendamento de atendimento presencial\*\* — Após compensação do pagamento, o cidadão escolhe data, horário e posto de atendimento.  
+3\. \*\*Agendamento de atendimento presencial\*\* — Após compensação do pagamento, o cidadão escolhe data, horário e posto de atendimento.
 
 &#x20;  \*F5:\* escassez de vagas em grandes centros urbanos; cancelamentos em massa por problemas climáticos ou greves.
 
-
-
-4\. \*\*Coleta biométrica e entrevista\*\* — No dia agendado, o cidadão comparece ao posto, apresenta documentos originais, realiza a coleta de fotografia, digitais e assinatura.  
+4\. \*\*Coleta biométrica e entrevista\*\* — No dia agendado, o cidadão comparece ao posto, apresenta documentos originais, realiza a coleta de fotografia, digitais e assinatura.
 
 &#x20;  \*F6:\* divergência entre documentos; falha na leitura biométrica de idosos ou pessoas com dificuldades dermatológicas.
 
+5\. \*\*Retirada do passaporte\*\* — O cidadão é notificado e retira o documento no posto, mediante apresentação de protocolo e identificação.
 
-
-5\. \*\*Retirada do passaporte\*\* — O cidadão é notificado e retira o documento no posto, mediante apresentação de protocolo e identificação.  
-
-&#x20;  \*G3:\* prazos de produção variam e a comunicação por e-mail/SMS pode falhar (caixa de spam, troca de número).\*
+&#x20;  \*G3:\* prazos de produção variam e a comunicação por e-mail/SMS pode falhar (caixa de spam, troca de número).
 
 
 
@@ -66,7 +54,7 @@
 
 
 
-\## 3. Linha de Frente / Frontstage
+\## 3. Frontstage (Linha de Frente)
 
 
 
@@ -94,7 +82,7 @@
 
 
 
-\## 4. Bastidores / Backstage
+\## 4. Backstage (Bastidores)
 
 
 
@@ -174,7 +162,7 @@
 
 
 
-\## Resumo de Riscos Críticos
+\## 6. Resumo de Riscos Críticos
 
 
 
@@ -219,6 +207,30 @@
 | G7 | Gargalo | Failover não transparente | Suporte |
 
 | G8 | Gargalo | Instabilidade logística de transporte | Suporte |
+
+
+
+\---
+
+
+
+\## 7. Swim Lanes do Blueprint
+
+
+
+| Camada | Descrição | Ator Principal |
+
+|--------|-----------|----------------|
+
+| Evidências Físicas | Artefatos tangíveis e intangíveis que o cidadão encontra | Site PF, GRU, Posto, Passaporte |
+
+| Ações do Cidadão | Passos executados pelo usuário do serviço | Cidadão |
+
+| Frontstage | Interações visíveis entre cidadão e prestador | Sistema Web PF, Atendente |
+
+| Backstage | Atividades invisíveis que suportam o frontstage | Validação TSE/Receita, Conciliação, Casa da Moeda, Notificações |
+
+| Processos de Suporte | Infraestrutura e serviços habilitadores | SERPRO, Backup, ICP-Brasil, Logística |
 
 
 
